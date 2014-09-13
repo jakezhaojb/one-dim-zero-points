@@ -15,7 +15,7 @@ b = 4;
 
 addpath('./solver')
 % Newton's method
-[sln, seq] = newton(@cuberoot, a, 1e-10, 100, true);
+[sln, seq] = newton(@cuberoot, a, 1e-10, 100, true, true);
 disp(['Newton method solution: ', num2str(sln)]);
 
 %% Secant
