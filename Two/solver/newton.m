@@ -8,6 +8,9 @@ function [zero_pt, seq] = newton(J, a, varargin)
     end
     if n > 3
         vis = varargin{4};
+        if ~exist('visual', 'dir')
+            mkdir('visual');
+        end
     end
     if n > 2
         verbose = varargin{3};
@@ -69,7 +72,7 @@ function [zero_pt, seq] = newton(J, a, varargin)
         tri_z = [0, 0, 0];
         hold on
         patch(tri_x, tri_y, tri_z);
-        saveas(h, 'newton','jpg')
+        saveas(h, 'visual/newton','jpg')
     end
     disp('Iterates done.')
     seq = x(1:i);
