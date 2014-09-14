@@ -55,7 +55,7 @@ function [zero_pt, seq] = secant(J, a, b, varargin)
         end
         if verbose
             format long e
-            str = ['iter: ', num2str(i), ' -> x: ', num2str(x(i), '%e'), ' -> y: ', num2str(J_buffer(2), '%e')];
+            str = ['iter: ', num2str(i-2), ' -> x: ', num2str(x(i), '%e'), ' -> y: ', num2str(J_buffer(2), '%e')];
             disp(str)
         end
         if abs(J_buffer(2)) == 0 | abs(x(i) - x(i-1)) < tol

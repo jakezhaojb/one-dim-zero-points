@@ -72,7 +72,7 @@ function [zero_pt, seq] = wheeler(J, a, b, varargin)
         end
         if verbose
             format long e
-            str = ['iter: ', num2str(i), ' -> x: ', num2str(x(i), '%e'), ' -> y: ', num2str(J_cur, '%e')];
+            str = ['iter: ', num2str(i-2), ' -> x: ', num2str(x(i), '%e'), ' -> y: ', num2str(J_cur, '%e')];
             disp(str)
         end
         if abs(J_cur) == 0 | abs(x(i) - x(i-1)) < tol

@@ -61,7 +61,7 @@ function [zero_pt, seq] = regular_falsi(J, a, b, varargin)
         J_sign(i) = sign(J_buffer(i));
         if verbose
             format long e
-            str = ['iter: ', num2str(i), ' -> x: ', num2str(x(i), '%e'), ' -> y: ', num2str(J_buffer(i), '%e')];
+            str = ['iter: ', num2str(i-2), ' -> x: ', num2str(x(i), '%e'), ' -> y: ', num2str(J_buffer(i), '%e')];
             disp(str)
         end
         if abs(J_buffer(i)) == 0 | abs(x(i) - x(i-1)) < tol
