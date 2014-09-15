@@ -7,14 +7,16 @@
 % 
 
 clc
-clear
+%clear
 
 % Set start points
-a = 0.5;
-b = 3.1;
+a = 0.95;
+b = 1.01;
 % User input function
 str = input('Input your function use variable "x"\n', 's');
 fun = inline(str);
 % Bisection 
 [sln, seq] = bisection(fun, a, b, 1e-10, 12, true);
-disp(['Solution is: ', num2str(sln)]);
+format long e
+disp(['Solution is: ', num2str(sln, '%e')]);
+disp(['Uncertainty: ', num2str(abs(seq(end)-seq(end-1)), '%e')]);

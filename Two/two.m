@@ -10,22 +10,22 @@ clc
 clear
 
 % Set start point
-a = 0.9;
+a = 4;
 b = 10;
 
 addpath('./solver')
 % Newton's method
 [sln, seq] = newton(@cuberoot, a, 1e-10, 100, true, true);
-disp(['Newton method solution: ', num2str(sln)]);
+disp(['Newton method solution: ', num2str(sln, '%e')]);
 
 % Secant
-[sln, seq] = secant(@cuberoot, a, b, 1e-10, 100, true, true);
-disp(['Secant method solution: ', num2str(sln)]);
-
-% Regula falsi
-[sln, seq] = regula_falsi(@cuberoot, a, b, 1e-10, 100, true, true);
-disp(['Regula falsi method solution: ', num2str(sln)]);
-
-% Wheeler's method
-[sln, seq] = wheeler(@cuberoot, a, b, 1e-10, 100, true, true);
-disp(['Wheeler method solution: ', num2str(sln)]);
+%[sln, seq] = secant(@cuberoot, a, b, 1e-10, 100, true, true);
+%disp(['Secant method solution: ', num2str(sln, '%e')]);
+%
+%% Regula falsi
+%[sln, seq] = regula_falsi(@cuberoot, a, b, 1e-10, 100, true, true);
+%disp(['Regula falsi method solution: ', num2str(sln, '%e')]);
+%
+%% Wheeler's method
+%[sln, seq] = wheeler(@cuberoot, a, b, 1e-10, 100, true, true);
+%disp(['Wheeler method solution: ', num2str(sln, '%e')]);
