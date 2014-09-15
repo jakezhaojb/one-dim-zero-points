@@ -11,6 +11,7 @@ Usage
 ---
 To use every function, they have same intefaces and parameter setting. For example, bisection, Secant method, Regula_falsi and Wheeler's method require a pair of initial guesses; usages:
 > secant(@fun, a, b, tol, maxit, verbose, plot);<br\ >
+> ------------------------------------------------------ <br\ >
 > @fun is a handle for function to be optimized.<br\ >
 > a, b are initial guesses.<br\ >
 > tol is abbreviation for tolenrance of uncertainty.<br\ >
@@ -21,6 +22,7 @@ To use every function, they have same intefaces and parameter setting. For examp
 
 Newton's method is slightly different, since it needs only one initial guess, thus:
 > newton(@fun, a, tol, maxit, verbose, plot);<br\ >
+> ------------------------------------------------------ <br\ >
 > @fun is a handle for function to be optimized.<br\ >
 > a is the initial guess.<br\ >
 > tol is abbreviation for tolenrance of uncertainty.<br\ >
