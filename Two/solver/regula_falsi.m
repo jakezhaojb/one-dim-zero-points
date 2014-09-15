@@ -1,3 +1,14 @@
+% ===================================================
+% Usage
+% regula_falsi(@fun, a, b, tol, maxit, verbose, plot)
+% - @fun -> the handle of function to be resolved
+% - a, b -> initial guesses
+% - tol ->  the tolerence of uncertainty; 
+%       iteration stops if |x(k+1)-x(k)| < tol
+% - maxit -> maximum iterations;
+% - verbose
+% - plot -> show optimization process in graphs.
+% ===================================================
 % regular falsi method
 function [zero_pt, seq] = regular_falsi(J, a, b, varargin)
     % Parameter parsing
