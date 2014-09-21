@@ -36,7 +36,7 @@ function [zero_pt, seq] = wheeler(J, a, b, varargin)
         maxit = 1000;
     end
     % Memory pre-allocation and starting point initialize
-    x = zeros(2, maxit+2);
+    x = zeros(1, maxit+2);
     J_sign = zeros(1, maxit+2);
     J_buffer = zeros(1, maxit+2);
     x(1:2) = [a, b];
@@ -76,6 +76,9 @@ function [zero_pt, seq] = wheeler(J, a, b, varargin)
                 line([x(i), x(i)], [J_cur, 0], 'linestyle', '--');
             end
         else
+            J_buffer = [J_buffer(1), J_cur];
+            x_buffer = [x_buffer(1), x(i)];
+            J_sign = [J_sign(1), sign(J_cur)];
             u = u / 2;
             if vis
                 line([x_buffer(1), x_buffer(1)], [J_buffer(1)*u, J_buffer(1)*u*2], 'linestyle', '--');
